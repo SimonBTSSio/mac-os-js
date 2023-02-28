@@ -35,6 +35,7 @@ class Login {
       if (storedData) {
         let userData = JSON.parse(storedData);
         if (userData.email === this.email && userData.password === this.password) {
+          document.title = "Ordinateur de " + this.email;
           this.state = "User logged in successfully!";
           alert(this.state);
           console.log(this.getUserId()); // récupération de l'ID lors de la connexion

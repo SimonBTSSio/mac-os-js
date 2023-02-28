@@ -8,6 +8,8 @@ class Register {
 
     render() {
         if (localStorage.getItem("user")) {
+            let userData = JSON.parse(localStorage.getItem("user"));
+            document.title = "Ordinateur de " + userData.email;
             document.getElementById("register-show").style.display = "none";
             document.getElementById("login-show").style.display = "flex";
             return;
