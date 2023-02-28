@@ -1,0 +1,43 @@
+@import "chrono";
+@import "time";
+@import "timer";
+.clock-header{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    > div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33.33%;
+        height: 100%;
+        font-size: 2em;
+        font-family: 'latoBold';
+        cursor: pointer;
+        background-color: #fff;
+    }
+}
+.active{
+    border-bottom: solid 3px #0077BD;
+}
+.seg{
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    > div{
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        top: 0;
+    }
+}
+/*minuteur*/
+.minuteur{
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

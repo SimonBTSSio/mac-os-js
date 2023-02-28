@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dist/css/main.css">
+        <script src="js/Desktop.js"></script>
+        <script src="js/Lfup.js"></script>
+        <script src="js/Dragndrop.js"></script>
+        <script src="js/Window.js"></script>
+        <script src="js/App.js"></script>
+        <script src="js/clock/Clock.js"></script>
+        <script src="js/clock/HorlogesClasses.js"></script>
+        <script src="js/calculator/Calculator.js"></script>
+        <script src="js/calculator/CalcClasses.js"></script>
+        <script src="js/parameter/Parameter.js"></script>
+        <script src="js/tiktaktoe/Tiktactoe.js"></script>
+        <script src="js/tiktaktoe/TttClasses.js"></script>
+        <script src="js/loader-class/LoaderClasses.js"></script>
+        <script src="js/register/Register.js"></script>
+        <script src="js/register/Login.js"></script>
+        <script src="js/Loader.js"></script>
+        <title>Ordinateur</title>
+    </head>
+    <body>
+        <div class="register" id="register-show">
+            <form class="form-reg" id="login-form" method="POST">
+                <h2 h2-reg>Inscription</h2>
+                <div class="form-control">
+                    <label class="lbl-reg" for="email">Email :</label>
+                    <input class="npt-reg" type="email" id="email" name="email" required>
+                </div>
+                <div class="form-control">
+                    <label class="lbl-reg" for="password">Mot de passe :</label>
+                    <input class="npt-reg" type="password" id="password" name="password" required>
+                </div>
+            </form>
+            
+            <button class="btn-reg" type="submit" id="register"> S'inscrire</button>
+            <p id="error-message"></p>
+        </div>
+
+        <div class="login" id="login-show">
+            <form class="form-reg" id="login-form" method="POST">
+                <h2 class="h2-reg">Connexion</h2>
+                <div class="form-control">
+                    <label class="lbl-reg" for="email">Email :</label>
+                    <input class="npt-reg" type="email" id="email-log" name="email" required>
+                </div>
+                <div class="form-control">
+                    <label class="lbl-reg" for="password">Mot de passe :</label>
+                    <input class="npt-reg" type="password" id="password-log" name="password" required>
+                </div>
+            </form>
+            
+            <button class="btn-reg" type="submit" id="login"> Se connecter</button>
+            <p id="error-message"></p>
+        </div>
+        <nav class="top-bar">
+            <ul class="top-bar-menu" >
+                <li class="ma-10"><a><img src="./icon/apple_icon.png" alt="" height="20px" width="20px"></a></li>
+                <li class="ma-10"><a href="">File</a></li>
+                <li class="ma-10"><a href="">Edit</a></li>
+                <li class="ma-10"><a href="">View</a></li>
+                <li class="ma-10"><a href="">Go</a></li>
+                <li class="ma-10"><a href="">Tools</a></li>
+                <li class="ma-10"><a href="">help</a></li>
+            </ul>
+
+            <ul class="top-bar-menu">
+                <li class="ma-10">
+                    <a href="" id="batterie">
+                        <div class="nav-bar">
+                            <div class="batterie">
+                                <div class="niveau">
+                                    <div class="pourcentage" id="pourcentage"></div>
+                                </div>
+                            </div>
+                            <div class="pourcent" id="pourcent"></div>
+                        </div>
+                    </a>
+                </li>
+                <li class="ma-10"><a href="" id="date-bar"></a></li>
+                <li class="ma-10"><a href="" id="date-time"></a></li>
+                <li class="ma-10"><a href="" id="latency-bar"></a></li>
+            </ul>
+        </nav>
+        <main id="desktop">
+
+        </main>
+        <footer>
+            <div class="bottom-bar" id="foot">
+
+            </div>
+        </footer>
+        <script>
+            const register = new Register();
+            register.render();
+            const login = new Login();
+            login.render();
+            var postionSc = {
+                0 : new Clock(),
+                1 : new Calculator(),
+                2 : new Parameter(),
+                3 : new Tiktaktoe()
+            }
+
+            let desk = new Desktop();
+            desk.addListener();
+
+            // récupérer les enfants du bureau
+            let fc = desk.desk.children;
+
+            for (let prop in postionSc) {
+                fc.item(prop).append(postionSc[prop].lfup.div);
+            };
+
+            /* DRAG SYSTEM */
+            let drag = new Dragndrop();
+        </script>
+    </body>
+</html>
