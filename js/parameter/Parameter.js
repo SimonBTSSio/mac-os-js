@@ -9,6 +9,9 @@ class Parameter extends App{
     eMin = true;
     eSec= true;
 
+    isDarck = false;
+    
+
     constructor(){
         super("imgs/parameter.png", "Parametres");
         this.window.setViewHtml(this.htmlApp());

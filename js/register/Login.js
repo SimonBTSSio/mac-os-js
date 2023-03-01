@@ -25,7 +25,6 @@ class Login {
         this.email = document.getElementById("email-log").value;
         this.password = document.getElementById("password-log").value;
         this.id = Login.generateId(); // génération de l'ID lors de l'enregistrement
-        console.log(this);
         this.login();
       });
     }
@@ -38,7 +37,6 @@ class Login {
           document.title = "Ordinateur de " + this.email;
           this.state = "User logged in successfully!";
           alert(this.state);
-          console.log(this.getUserId()); // récupération de l'ID lors de la connexion
           this.loginPage.style.display = "none";
         } else {
           this.state = "Incorrect email or password.";

@@ -9,7 +9,6 @@ class Tiktaktoe extends App{
     openApp(){
         super.openApp();
         this.game = new TttClasses('board');
-        console.log(this.game);
         this.game.render();
     }
 

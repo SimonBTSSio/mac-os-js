@@ -32,12 +32,10 @@ class TttClasses {
       for(var i = 0; i < identifiant.length; i++) {
           let id = []
           id = identifiant[i].toString()
-          console.log(id);
           cell = document.getElementById(id)
         
           // Add an event listener to the cell
           cell.addEventListener('click', () => { 
-            console.log("clique !")
             this.myFunction(id);
           });
         }
@@ -66,7 +64,6 @@ class TttClasses {
         button.value = "X"
         button.disabled = true;
         this.case_state.push(elt)
-        console.log("Valeur de la sauvegarde :", this.case_state)
     
         this.checkwin ()
         this.playing = this.playing + 1  
@@ -85,15 +82,11 @@ class TttClasses {
         button.disabled = true;
     
         this.case_state.push(elt)
-        console.log("Valeur de la sauvegarde :", this.case_state)
         this.checkwin ()
         this.playing = this.playing + 1
         
     
       }
-      
-      console.log(this.id)
-      console.log(this.playing)
     
     }
 
@@ -108,7 +101,6 @@ class TttClasses {
       this.sept = document.getElementById("sept").value;
       this.huit = document.getElementById("huit").value;
       this.neuf = document.getElementById("neuf").value;
-      console.log("checking score")
       // Checking if Player X won or not and after
         // that disabled all the other fields
         if ((this.un == 'x' || this.un == 'X') && (this.deux == 'x' ||
@@ -120,7 +112,6 @@ class TttClasses {
             document.getElementById("sept").disabled = true;
             document.getElementById("huit").disabled = true;
             document.getElementById("neuf").disabled = true;
-            console.log("win");
             window.alert('Player X won');
         }
         else if ((this.un == 'x' || this.un == 'X') && (this.quatre == 'x' ||
@@ -133,7 +124,6 @@ class TttClasses {
             document.getElementById("six").disabled = true;
             document.getElementById("huit").disabled = true;
             document.getElementById("neuf").disabled = true;
-            console.log("win");
             window.alert('Player X won');
         }
         else if ((this.sept == 'x' || this.sept == 'X') && (this.huit == 'x' ||
@@ -145,7 +135,6 @@ class TttClasses {
             document.getElementById("quatre").disabled = true;
             document.getElementById("cinq").disabled = true;
             document.getElementById("six").disabled = true;
-            console.log("win");
             window.alert('Player X won');
         }
         else if ((this.trois == 'x' || this.trois == 'X') && (this.six == 'x' ||
@@ -158,7 +147,6 @@ class TttClasses {
             document.getElementById("cinq").disabled = true;
             document.getElementById("sept").disabled = true;
             document.getElementById("huit").disabled = true;
-            console.log("win");
             window.alert('Player X won');
         }
         else if ((this.un == 'x' || this.un == 'X') && (this.cinq == 'x' ||
@@ -170,7 +158,6 @@ class TttClasses {
             document.getElementById("six").disabled = true;
             document.getElementById("sept").disabled = true;
             document.getElementById("huit").disabled = true;
-            console.log("win");
             window.alert('Player X won');
         }
         else if ((this.trois == 'x' || this.trois == 'X') && (this.cinq == 'x' ||
@@ -183,7 +170,6 @@ class TttClasses {
             document.getElementById("six").disabled = true;
             document.getElementById("huit").disabled = true;
             document.getElementById("neuf").disabled = true;
-            console.log("win");
             window.alert('Player X won');
         }
         else if ((this.deux == 'x' || this.deux == 'X') && (this.cinq == 'x' ||
@@ -195,7 +181,6 @@ class TttClasses {
             document.getElementById("six").disabled = true;
             document.getElementById("sept").disabled = true;
             document.getElementById("neuf").disabled = true;
-            console.log("win");
             window.alert('Player X won');
         }
         else if ((this.quatre == 'x' || this.quatre == 'X') && (this.cinq == 'x' ||
@@ -208,7 +193,6 @@ class TttClasses {
             document.getElementById("sept").disabled = true;
             document.getElementById("huit").disabled = true;
             document.getElementById("neuf").disabled = true;
-            console.log("win");
             window.alert('Player X won');
         }
         // Checking of Player X finish

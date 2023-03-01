@@ -21,6 +21,7 @@
         <script src="js/register/Register.js"></script>
         <script src="js/register/Login.js"></script>
         <script src="js/Loader.js"></script>
+        <script src="js/Data.js"></script>
         <title>Ordinateur</title>
     </head>
     <body>
@@ -102,6 +103,7 @@
             </div>
         </footer>
         <script>
+            const data = new LocalStorageManager('board');
             const register = new Register();
             register.render();
             const login = new Login();
